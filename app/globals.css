@@ -1,26 +1,201 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Color Tokens ─────────────────────────────── */
+  --color-paper-white: #F4F4F4;
+  --color-on-secondary-fixed-variant: #474746;
+  --color-outline: #919378;
+  --color-primary: #ffffff;
+  --color-on-secondary-fixed: #1c1b1b;
+  --color-on-error-container: #ffdad6;
+  --color-ink-black: #0A0A0A;
+  --color-primary-fixed: #dbee00;
+  --color-inverse-on-surface: #303123;
+  --color-surface-dim: #131408;
+  --color-on-tertiary-fixed-variant: #2b4c51;
+  --color-on-primary-container: #616a00;
+  --color-secondary-container: #474746;
+  --color-surface-container: #1f2113;
+  --color-surface-bright: #393a2b;
+  --color-tertiary-fixed: #c6e9ef;
+  --color-on-background: #e4e4ce;
+  --color-error: #ffb4ab;
+  --color-on-tertiary-fixed: #001f24;
+  --color-tertiary: #ffffff;
+  --color-primary-container: #dbee00;
+  --color-surface: #131408;
+  --color-secondary-fixed-dim: #c8c6c5;
+  --color-on-secondary: #313030;
+  --color-on-secondary-container: #b7b5b4;
+  --color-outline-variant: #474832;
+  --color-tertiary-container: #c6e9ef;
+  --color-surface-variant: #353627;
+  --color-on-primary-fixed: #1a1d00;
+  --color-secondary: #c8c6c5;
+  --color-acid-lime: #EBFF00;
+  --color-surface-tint: #c0d100;
+  --color-surface-container-low: #1b1d0f;
+  --color-on-tertiary-container: #496a6f;
+  --color-surface-container-lowest: #0e0f04;
+  --color-secondary-fixed: #e5e2e1;
+  --color-surface-container-high: #2a2b1d;
+  --color-tertiary-fixed-dim: #aacdd2;
+  --color-muted-gray: #2D2D2D;
+  --color-on-surface-variant: #c8c8ab;
+  --color-on-surface: #e4e4ce;
+  --color-inverse-surface: #e4e4ce;
+  --color-on-primary-fixed-variant: #444b00;
+  --color-inverse-primary: #5b6400;
+  --color-on-tertiary: #13353a;
+  --color-background: #131408;
+  --color-primary-fixed-dim: #c0d100;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+  --color-surface-container-highest: #353627;
+  --color-on-primary: #2f3300;
+
+  /* ── Spacing Tokens ───────────────────────────── */
+  --spacing-unit: 4px;
+  --spacing-gutter: 24px;
+  --spacing-margin-page: 64px;
+  --spacing-section-gap: 128px;
+
+  /* ── Font Token ────────────────────────────────── */
+  --font-noto: var(--font-noto);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ═══════════════════════════════════════════════════
+   Type Scale Utilities
+   Single utility = font-family + size + weight + line-height
+   No need to pair font-* and text-* separately anymore
+   ═══════════════════════════════════════════════════ */
+
+@utility text-display-2xl {
+  font-family: var(--font-noto);
+  font-size: clamp(40px, 8vw, 84px);
+  line-height: 90%;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+@utility text-headline-lg {
+  font-family: var(--font-noto);
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+@utility text-headline-lg-mobile {
+  font-family: var(--font-noto);
+  font-size: clamp(24px, 4vw, 32px);
+  line-height: 110%;
+  font-weight: 700;
+}
+
+@utility text-body-md {
+  font-family: var(--font-noto);
+  font-size: 18px;
+  line-height: 160%;
+  font-weight: 400;
+}
+
+@utility text-label-sm {
+  font-family: var(--font-noto);
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+@utility text-label-md {
+  font-family: var(--font-noto);
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════
+   Glass & Surface Utilities
+   ═══════════════════════════════════════════════════ */
+
+@utility glass-panel {
+  background: rgba(19, 20, 8, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(145, 147, 120, 0.2);
+}
+
+@utility glass-card {
+  background: linear-gradient(135deg, rgba(53, 54, 39, 0.4) 0%, rgba(19, 20, 8, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(235, 255, 0, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@utility glowing-edge {
+  box-shadow: 0 0 15px rgba(235, 255, 0, 0.2), inset 0 0 10px rgba(235, 255, 0, 0.1);
+}
+
+@utility bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
+/* ═══════════════════════════════════════════════════
+   Global Styles
+   ═══════════════════════════════════════════════════ */
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+}
+
+/* Input Focus */
+input:focus {
+  outline: none;
+  border-bottom-color: var(--color-acid-lime) !important;
+}
+
+/* ── Native Date Input Normalisation ────────────── */
+/* Ensure slashes / separators inherit the same text color */
+input[type="date"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input[type="date"]::-webkit-datetime-edit-text,         /* the "/" separators */
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: inherit;
+}
+
+/* Calendar picker icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Brutalist Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-on-secondary-fixed-variant);
+  border: 1px solid var(--color-ink-black);
 }

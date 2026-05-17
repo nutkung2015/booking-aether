@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AETHER - Room Options</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&amp;family=Hanken+Grotesk:wght@400&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "paper-white": "#F4F4F4",
+                    "on-secondary-fixed-variant": "#474746",
+                    "outline": "#919378",
+                    "primary": "#ffffff",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-error-container": "#ffdad6",
+                    "ink-black": "#0A0A0A",
+                    "primary-fixed": "#dbee00",
+                    "inverse-on-surface": "#303123",
+                    "surface-dim": "#131408",
+                    "on-tertiary-fixed-variant": "#2b4c51",
+                    "on-primary-container": "#616a00",
+                    "secondary-container": "#474746",
+                    "surface-container": "#1f2113",
+                    "surface-bright": "#393a2b",
+                    "tertiary-fixed": "#c6e9ef",
+                    "on-background": "#e4e4ce",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#001f24",
+                    "tertiary": "#ffffff",
+                    "primary-container": "#dbee00",
+                    "surface": "#131408",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-secondary": "#313030",
+                    "on-secondary-container": "#b7b5b4",
+                    "outline-variant": "#474832",
+                    "tertiary-container": "#c6e9ef",
+                    "surface-variant": "#353627",
+                    "on-primary-fixed": "#1a1d00",
+                    "secondary": "#c8c6c5",
+                    "acid-lime": "#EBFF00",
+                    "surface-tint": "#c0d100",
+                    "surface-container-low": "#1b1d0f",
+                    "on-tertiary-container": "#496a6f",
+                    "surface-container-lowest": "#0e0f04",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-container-high": "#2a2b1d",
+                    "tertiary-fixed-dim": "#aacdd2",
+                    "muted-gray": "#2D2D2D",
+                    "on-surface-variant": "#c8c8ab",
+                    "on-surface": "#e4e4ce",
+                    "inverse-surface": "#e4e4ce",
+                    "on-primary-fixed-variant": "#444b00",
+                    "inverse-primary": "#5b6400",
+                    "on-tertiary": "#13353a",
+                    "background": "#131408",
+                    "primary-fixed-dim": "#c0d100",
+                    "error-container": "#93000a",
+                    "on-error": "#690005",
+                    "surface-container-highest": "#353627",
+                    "on-primary": "#2f3300"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "gutter": "24px",
+                    "margin-page": "64px",
+                    "section-gap": "128px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Syne"
+                    ],
+                    "headline-lg": [
+                            "Syne"
+                    ],
+                    "display-2xl": [
+                            "Syne"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-sm": [
+                            "JetBrains Mono"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "110%",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "110%",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-2xl": [
+                            "84px",
+                            {
+                                    "lineHeight": "90%",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-md": [
+                            "18px",
+                            {
+                                    "lineHeight": "160%",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "100%",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            background-color: theme('colors.background');
+        }
+        .glass-card {
+            background: linear-gradient(135deg, rgba(53, 54, 39, 0.4) 0%, rgba(19, 20, 8, 0.8) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(235, 255, 0, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glowing-edge {
+            box-shadow: 0 0 15px rgba(235, 255, 0, 0.2), inset 0 0 10px rgba(235, 255, 0, 0.1);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style data-stitch-cursor=""></style><style data-stitch-scroll-lock=""></style></head>
+<body class="text-on-surface bg-background min-h-screen flex flex-col font-body-md relative overflow-hidden">
+<!-- Top Navigation (Back Action) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 max-w-full bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20">
+<button class="flex items-center text-acid-lime dark:text-acid-lime hover:scale-95 transition-transform">
+<span class="material-symbols-outlined mr-2" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+<span class="font-label-sm text-label-sm">%u0E01%u0E25%u0E31%u0E1A</span>
+</button>
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold tracking-tighter text-acid-lime dark:text-acid-lime">AETHER</div>
+<button class="flex items-center text-on-surface hover:text-acid-lime transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">filter_list</span>
+</button>
+</header>
+<!-- Main Canvas: Card Stack -->
+<main class="flex-grow flex flex-col items-center justify-center px-gutter pt-24 pb-32 relative h-screen">
+<div class="w-full max-w-md relative aspect-[3/4] flex items-center justify-center">
+<!-- Background Card 2 -->
+<div class="absolute top-8 w-[85%] h-[90%] glass-card rounded-lg border-outline-variant/30 z-10 translate-y-8 opacity-40"></div>
+<!-- Background Card 1 -->
+<div class="absolute top-4 w-[90%] h-[90%] glass-card rounded-lg border-outline-variant/50 z-20 translate-y-4 opacity-70"></div>
+<!-- Foreground Card -->
+<div class="relative w-full h-full glass-card glowing-edge rounded-xl z-30 flex flex-col overflow-hidden group border-acid-lime/50">
+<!-- Image Area -->
+<div class="relative h-3/5 w-full bg-surface-variant">
+<img alt="Room Image" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-500" data-alt="A sleek, brutalist luxury hotel room interior. The space features raw concrete walls, minimalist dark wood furniture, and a massive floor-to-ceiling window overlooking a futuristic cityscape at night. Sharp, moody lighting with neon yellow accents highlights the stark textures. The aesthetic is high-end, editorial, and experimental." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOPhMAejMFbgw0YEpA9g9zCXV4FyiS7Ty4wA82la-oii171IVyuZ_eJ4evuwvlr-8MgfmYeyM_tOo-XQx80UVqbOZ9-8dCykGdDEoKa-qnnv0v2bnygLRvsyVILiqz_1sPJJyrs_wSego97jq4xkx5sa_aDd1ZRm4e--5YlIkTU8Ap18IkXFFacIc9xcmgXvPrteM9FOVdk-Mk0ow-qZcTsqlimpYfjOx_-r19Z2NCTeXq1ffzeHufw_l9A8Db-r9qoufFHRIhisTc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-ink-black via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 bg-acid-lime text-ink-black font-label-sm text-label-sm px-3 py-1 rounded">%u0E04%u0E27%u0E32%u0E21%u0E40%u0E2B%u0E21%u0E32%u0E30%u0E22%u0E2A%u0E21 98%</div>
+</div>
+<!-- Content Area -->
+<div class="flex-grow flex flex-col justify-between p-6 bg-ink-black/90">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-lg text-headline-lg-mobile text-paper-white uppercase tracking-tight">THE AMAN VILLA</h2>
+<div class="text-right">
+<span class="block font-label-sm text-label-sm text-acid-lime">ต่อคืน</span>
+<span class="font-headline-lg text-headline-lg-mobile text-paper-white">%u0E3F45,000</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-4">สระว่ายน้ำส่วนตัวแบบอินฟินิตี้พร้อมวิวอ่าวพังงา สัมผัสประสบการณ์การต้อนรับระดับโลกแบบไทยที่ซึ่งสถาปัตยกรรมมินิมอลแบบดิบเท่มาบรรจบกับความหรูหราสไตล์เขตร้อน</p>
+</div>
+<!-- Amenities Tags -->
+<div class="flex gap-2 mt-4">
+<span class="border border-outline-variant/50 px-2 py-1 font-label-sm text-label-sm text-on-surface-variant">เตียงคิงไซส์</span>
+<span class="border border-outline-variant/50 px-2 py-1 font-label-sm text-label-sm text-on-surface-variant">85 ตร.ม.</span>
+<span class="border border-outline-variant/50 px-2 py-1 font-label-sm text-label-sm text-on-surface-variant">วิวเมือง</span>
+</div>
+<!-- Action -->
+<button class="w-full mt-6 bg-acid-lime text-ink-black font-label-sm text-label-sm py-4 border border-acid-lime hover:bg-ink-black hover:text-acid-lime transition-all duration-0">%u0E08%u0E2D%u0E07%u0E15%u0E2D%u0E19%u0E19%u0E35%u0E49</button>
+</div>
+</div>
+<!-- Swipe Indicators -->
+<div class="absolute top-1/2 -left-12 -translate-y-1/2 text-on-surface-variant/50 hidden md:block">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 0;">chevron_left</span>
+</div>
+<div class="absolute top-1/2 -right-12 -translate-y-1/2 text-acid-lime/80 hidden md:block animate-pulse">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 0;">chevron_right</span>
+</div>
+</div>
+<!-- Mobile Swipe Hint -->
+<div class="md:hidden mt-8 flex items-center justify-center gap-4 text-on-surface-variant/50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_left</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-acid-lime">ปัดเพื่อดูเพิ่มเติม</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_right</span>
+</div>
+</main>
+</body></html>
